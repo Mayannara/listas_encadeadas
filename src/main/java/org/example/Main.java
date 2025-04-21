@@ -6,7 +6,7 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.chart.ChartUtils; // Importe a classe ChartUtils
 
-
+//zxdxdxdxdxdxdxdxdxdxdx
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
