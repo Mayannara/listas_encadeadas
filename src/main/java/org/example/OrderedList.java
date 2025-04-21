@@ -76,7 +76,6 @@ class OrderedList<T> {
         this.list.clear();
     }
 
-
     //Metodo de busca binária
     public boolean containsBinarySearch(T element) {
         return binarySearchIndex(element) >= 0;
