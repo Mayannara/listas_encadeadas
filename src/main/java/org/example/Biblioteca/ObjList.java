@@ -1,12 +1,12 @@
-package org.example;
+package org.example.Biblioteca;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class objList<T> {
+public class ObjList<T> {
     protected List<T> list;
 
-    public objList() {
+    public ObjList() {
         this.list = new ArrayList<>();
     }
 }

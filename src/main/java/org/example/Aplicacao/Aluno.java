@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Aplicacao;
 
 //Aluno se torna uma classa abastrara,pois para o comparator funcionar necessita que ela seja assim e
 //uma classe abstrata não pode ser instanciada diretamente, por isso torna-se necessario criar uma nova

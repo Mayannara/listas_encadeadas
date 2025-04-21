@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Aplicacao;
 
 public class AlunoTurma extends Aluno {
     private String nome;

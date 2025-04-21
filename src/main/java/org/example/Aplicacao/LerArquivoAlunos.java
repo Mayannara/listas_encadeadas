@@ -1,6 +1,9 @@
-package org.example;
+package org.example.Aplicacao;
 
 
+
+import org.example.Biblioteca.OrderedList;
+import org.example.Biblioteca.ObjListNotOrdered;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -37,8 +40,8 @@ public class LerArquivoAlunos {
         return alunos;
     }
 
-    public objListNotOrdenada<Aluno> lerArquivoDesrdenado(String caminhoArquivo) {
-        objListNotOrdenada<Aluno> alunos = new objListNotOrdenada<>();
+    public ObjListNotOrdered<Aluno> lerArquivoDesrdenado(String caminhoArquivo) {
+        ObjListNotOrdered<Aluno> alunos = new ObjListNotOrdered<>();
         try (BufferedReader br = new BufferedReader(new FileReader(caminhoArquivo))) {
             String linha;
             br.readLine(); // Ignora a primeira linha

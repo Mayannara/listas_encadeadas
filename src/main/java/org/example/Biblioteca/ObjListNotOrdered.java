@@ -1,7 +1,10 @@
-package org.example;
+package org.example.Biblioteca;
 
-public class objListNotOrdenada<T> extends objList<T> {
-    public objListNotOrdenada() {
+import java.util.Comparator;
+
+
+public class ObjListNotOrdered<T> extends ObjList<T> {
+    public ObjListNotOrdered() {
         super();
     }
 

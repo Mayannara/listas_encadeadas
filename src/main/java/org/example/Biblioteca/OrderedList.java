@@ -1,11 +1,11 @@
-package org.example;
+package org.example.Biblioteca;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-// Generics de forma que na instanciação
-class OrderedList<T> {
+//Generics de forma que na instanciação
+public class OrderedList<T> {
     private List<T> list;
     private Comparator<T> comparator;
 
@@ -77,7 +77,7 @@ class OrderedList<T> {
     }
 
 
-    //Metodo de busca binária
+    //Método de busca binária retorna true ou false se o elemento está ou não na lista
     public boolean containsBinarySearch(T element) {
         return binarySearchIndex(element) >= 0;
     }
