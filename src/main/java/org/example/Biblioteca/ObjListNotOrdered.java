@@ -8,7 +8,7 @@ public class ObjListNotOrdered<T> extends ObjList<T> {
         super();
     }
 
-    public void adiciona(T element) {// adiciona elemento a lista
+    public void adiciona(T element) {//Adiciona elemento a lista
         if (element == null) {
             throw new IllegalArgumentException("Elemento não pode ser nulo.");
         }
@@ -19,12 +19,12 @@ public class ObjListNotOrdered<T> extends ObjList<T> {
         }
     }
 
-    public T pesquisar(T valor) {//busca o elemento na lista
+    public T pesquisar(T valor, Comparator<T> comparator) {//Busca o elemento na lista
         if (valor == null) {
             return null;
         }
         for (T elemento : this.list) {
-            if (valor.equals(elemento)) {
+            if (comparator.compare(valor, elemento) == 0) {
                 return elemento;
             }
         }

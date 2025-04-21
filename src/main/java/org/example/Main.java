@@ -20,7 +20,7 @@ import java.util.Scanner;
 
 class Main {
 
-    private static JFreeChart chart; // Declare o chart como um atributo estático da classe Main
+    private static JFreeChart chart; // Declara o chart como um atributo estático da classe Main
     private static OrderedList<Aluno> turmaOrdenada;
     private static ObjListNotOrdered<Aluno> turmaDesordenada;
 
@@ -29,7 +29,7 @@ class Main {
         int altura = 600;    // Altura da imagem em pixels
         File arquivo = new File(nomeArquivo);
         try {
-            ChartUtils.saveChartAsPNG(arquivo, chart, largura, altura); // Use o atributo estático chart
+            ChartUtils.saveChartAsPNG(arquivo, chart, largura, altura); // Usa o atributo estático chart
             System.out.println("Gráfico salvo com sucesso em: " + arquivo.getAbsolutePath());
         } catch (IOException e) {
             System.err.println("Erro ao salvar o gráfico: " + e.getMessage());
@@ -73,7 +73,7 @@ class Main {
         dataset.addValue(TempoSO,"Tempo","Leitura Ordenada");
         dataset.addValue(TempoSD, "Tempo","Leitura Desordenada");
 
-        // Crie o gráfico e atribua ao atributo estático 'chart'
+        // Cria o gráfico e atribui ao atributo estático 'chart'
         chart = ChartFactory.createBarChart(
                 "Comparação Tempo de Leitura", // Título do gráfico
                 "Tipo de Leitura",         // Rótulo do eixo X
@@ -85,7 +85,7 @@ class Main {
                 false
         );
 
-        // Chame o método para salvar o gráfico
+        // Chama o método para salvar o gráfico
         salvarGrafico("comparacao_leitura.png");
 
         Scanner scanner = new Scanner(System.in);
@@ -103,19 +103,23 @@ class Main {
 
             switch (opcao) {
                 case 1:
-                    System.out.println("Digite a matricula do auno");
+                    System.out.println("Digite a matrícula do aluno");
                     matricula = scanner.nextInt();
                     scanner.nextLine();
-                    System.out.println("Digite o nome do auno");
-                    nome = scanner.nextLine();
-                    System .out.println("Digite a nota do auno");
-                    nota = scanner.nextFloat();
 
                     iO = System.nanoTime();
-                    System.out.print(turmaDesordenada.pesquisar(new AlunoTurma(matricula, nome, nota)));
+                    AlunoTurma resultado = (AlunoTurma) turmaDesordenada.pesquisar(new AlunoTurma(matricula, " ", 0),new MatriculaComparator());
                     fO = System.nanoTime();
 
                     TempoSO = (fO - iO) / 1_000_000_000.0;
+        
+
+                    if (resultado != null) {
+                        System.out.println("Aluno encontrado: " );
+                        resultado.imprimir();
+                    } else {
+                        System.out.println("Aluno não encontrado");
+                    }
 
                     System.out.println("Tempo de resposta do aluno: " + TempoSO);
 
@@ -123,7 +127,7 @@ class Main {
                 case 2:
 
 
-                    System.out.println("Digite a matricula do auno");
+                    System.out.println("Digite a matricula do aluno");
                     matricula = scanner.nextInt();
                     scanner.nextLine();
 
@@ -143,6 +147,7 @@ class Main {
                     System.out.println("Tempo de resposta do aluno: " + TempoSO);
 
                     break;
+                   // Essa opção é para teste, ela apenas diz se o aluno existe ou não
                 case 3:
                     System.out.println("Digite a matricula do aluno");
                     matricula = scanner.nextInt();

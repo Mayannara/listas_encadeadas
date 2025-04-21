@@ -11,12 +11,12 @@ public class OrderedList<T> {
 
     //Construtor que recebe o comparador e o armazena
     public OrderedList(Comparator<T> comparator) {
-        // Inicia a lista vazia4
+        // Inicia a lista vazia
         this.list = new ArrayList<>();
         this.comparator = comparator;
     }
 
-    //função adicionar procura a posição do elemento passado na lista e o adiciona nela
+    //Função adicionar procura a posição do elemento passado na lista e o adiciona nela
     public void adicionar(T novoValor) {
         if (novoValor == null) {
             throw new IllegalArgumentException("Elemento não pode ser nulo.");
@@ -46,7 +46,7 @@ public class OrderedList<T> {
         return this.list.get(index);
     }
 
-    //retorna o tamanho da lista
+    //Retorna o tamanho da lista
     public int size() {
         return this.list.size();
     }
@@ -75,7 +75,6 @@ public class OrderedList<T> {
     public void clear() {
         this.list.clear();
     }
-
 
     //Método de busca binária retorna true ou false se o elemento está ou não na lista
     public boolean containsBinarySearch(T element) {
