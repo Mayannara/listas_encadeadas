@@ -76,8 +76,12 @@ public class OrderedList<T> {
         this.list.clear();
     }
 
+<<<<<<< HEAD:src/main/java/org/example/Biblioteca/OrderedList.java
 
     //Método de busca binária retorna true ou false se o elemento está ou não na lista
+=======
+    //Metodo de busca binária
+>>>>>>> 5aad4fe (teste de commit):src/main/java/org/example/OrderedList.java
     public boolean containsBinarySearch(T element) {
         return binarySearchIndex(element) >= 0;
     }
